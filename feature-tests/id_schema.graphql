@@ -1,0 +1,11 @@
+type User {
+  name: String
+}
+
+type Query {
+  user(username: ID): User
+}
+
+schema {
+  query: Query
+}

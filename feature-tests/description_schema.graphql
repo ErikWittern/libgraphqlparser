@@ -1,0 +1,14 @@
+type User {
+  name: String
+}
+
+"""
+A great description. Unfortunately, it breaks libgraphqlparser.
+"""
+type Query {
+  user(username: ID): User
+}
+
+schema {
+  query: Query
+}
