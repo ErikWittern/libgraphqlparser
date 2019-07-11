@@ -1,0 +1,16 @@
+interface NamedEntity {
+  name: String
+}
+
+type Person implements NamedEntity {
+  name: String
+  age: Int
+}
+
+type Query {
+  person: Person
+}
+
+schema {
+  query: Query
+}

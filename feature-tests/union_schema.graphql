@@ -1,0 +1,24 @@
+union SearchResult = Photo | Person | Thing
+
+type Thing {
+  name: String
+  age: Int
+}
+
+type Person {
+  name: String
+  age: Int
+}
+
+type Photo {
+  height: Int
+  width: Int
+}
+
+type Query {
+  result: SearchResult
+}
+
+schema {
+  query: Query
+}
