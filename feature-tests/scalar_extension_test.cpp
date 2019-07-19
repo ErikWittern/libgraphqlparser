@@ -14,7 +14,8 @@ using namespace std;
 using namespace facebook::graphql;  // use "parseString" without namespace
 using namespace facebook::graphql::ast;
 
-TEST_CASE("Multiple interfaces implemented by type in schema", "[multiple]") {
+TEST_CASE("Scalar interfaces implemented by type in schema",
+          "[scalar_extension]") {
   SECTION("Read schema including type implementing multiple interfaces") {
     FILE *fp = fopen("./feature-tests/multiple_interfaces_schema.graphql", "r");
     const char *error = nullptr;
