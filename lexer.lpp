@@ -175,6 +175,7 @@ notnewline [^\n\r]
   "@" { *yylloc = yyextra->loc; return yy::GraphQLParserImpl::token::TOK_AT; }
   "[" { *yylloc = yyextra->loc; return yy::GraphQLParserImpl::token::TOK_LBRACKET; }
   "]" { *yylloc = yyextra->loc; return yy::GraphQLParserImpl::token::TOK_RBRACKET; }
+  "&" { *yylloc = yyextra->loc; return yy::GraphQLParserImpl::token::TOK_AMPER; }
   "{" { *yylloc = yyextra->loc; return yy::GraphQLParserImpl::token::TOK_LBRACE; }
   "|" { *yylloc = yyextra->loc; return yy::GraphQLParserImpl::token::TOK_PIPE; }
   "}" { *yylloc = yyextra->loc; return yy::GraphQLParserImpl::token::TOK_RBRACE; }

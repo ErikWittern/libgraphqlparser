@@ -190,6 +190,7 @@ union yystype {                                         \
 %token LBRACE "{"
 %token PIPE "|"
 %token RBRACE "}"
+%token AMPER "&"
 
 %token <str> VARIABLE
 %token <str> INTEGER
@@ -617,7 +618,8 @@ implements_interfaces_opt: %empty { $$ = nullptr; }
                 ;
 
 type_name_list: type_name { $$ = new std::vector<std::unique_ptr<NamedType>>(); $$->emplace_back($1); }
-        |       type_name_list type_name { $1->emplace_back($2); $$ = $1; }
+        |       "&" type_name { $$ = new std::vector<std::unique_ptr<NamedType>>(); $$->emplace_back($2); } // the type list may (optionally) start with ampersand
+        |       type_name_list "&" type_name { $1->emplace_back($3); $$ = $1; }
                 ;
 
 field_definition: name arguments_definition_opt ":" type directives_opt { $$ = new FieldDefinition(@$, $1, $2, $4, $5); }
